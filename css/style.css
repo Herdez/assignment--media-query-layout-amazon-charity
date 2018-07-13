@@ -1,0 +1,107 @@
+body {
+  margin: 0; }
+
+.main-container {
+  padding: 0; }
+
+.header {
+  height: 130px;
+  padding: 20px 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #DDDDDD; }
+  .header__logo {
+    width: 250px; }
+    .header__logo__image {
+      width: 100%; }
+  .header__text {
+    width: 250px;
+    position: relative;
+    top: 65%; }
+    .header__text__image {
+      width: 100%; }
+
+.section {
+  height: 130px;
+  padding: 20px 40px; }
+  .section__principal {
+    font-family: 'Roboto', sans-serif;
+    color: #007C4C;
+    margin-bottom: 25px;
+    font-size: 37px; }
+  .section__text {
+    font-family: 'PT Mono', monospa; }
+
+.main-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+  .main-grid .grid {
+    width: 350px;
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    margin-right: 10px; }
+    .main-grid .grid__image-size {
+      width: 100%;
+      border-radius: 3px; }
+    .main-grid .grid__name {
+      font-family: 'Roboto', sans-serif;
+      color: #007C4C;
+      margin-bottom: 8px; }
+    .main-grid .grid__text {
+      font-family: 'PT Mono', monospa;
+      text-align: justify; }
+
+@media screen and (max-width: 1183px) {
+  .main-grid {
+    @inlude main-grid(); }
+    .main-grid .grid {
+      width: 400px; } }
+
+@media screen and (max-width: 900px) {
+  .main-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between; }
+    .main-grid .grid {
+      width: 325px; } }
+
+@media screen and (max-width: 1024px) {
+  .main-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between; }
+    .main-grid .grid {
+      width: 321px; } }
+
+@media screen and (max-width: 768px) {
+  .main-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between; }
+    .main-grid .grid {
+      width: 45%; } }
+
+@media screen and (max-width: 560px) {
+  .container {
+    padding: 0; }
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .header__text {
+      position: static; }
+  .main-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; }
+    .main-grid .grid {
+      width: auto; } }

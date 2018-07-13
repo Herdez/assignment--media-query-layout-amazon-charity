@@ -1,0 +1,168 @@
+$green-color: #007C4C;
+$background: #DDDDDD;
+
+@mixin header {
+    height: 130px;
+    padding: 20px 40px;
+}
+
+@mixin title-style {
+  font-family: 'Roboto', sans-serif;
+}
+
+@mixin subtitle-style {
+  font-family: 'PT Mono', monospa;
+}
+
+@mixin header-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+@mixin main-grid {       
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+}
+
+@mixin header-main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}   
+
+
+body{
+    margin: 0;
+}
+
+
+.main-container{
+    padding: 0;
+}
+
+.header{
+    @include header();
+    @include header-flex();
+    background-color: $background;
+    &__logo{
+        width: 250px;
+        &__image{
+            width: 100%;
+        }
+    }
+    &__text{
+        width: 250px;
+        position: relative;
+        top: 65%;
+        &__image{
+            width: 100%;
+        }
+    }
+}
+
+.section{
+   @include header();
+    &__principal {
+        @include title-style();
+        color: #007C4C;
+        margin-bottom: 25px;
+        font-size: 37px;
+    }
+    &__text {
+        @include subtitle-style();
+    }
+}
+
+.main-grid{
+    @include main-grid();
+    .grid{
+        width: 350px;
+        padding: 5px;
+        border: 1px solid gray;
+        border-radius: 3px;
+        margin-bottom: 10px;
+        margin-right: 10px;
+        &__image-size{               
+            width: 100%;
+            border-radius: 3px; 
+        }
+        &__name {
+            @include title-style();
+            color: $green-color;
+            margin-bottom: 8px;
+        }
+        &__text{
+            @include subtitle-style();
+            text-align: justify;
+        }
+    }
+
+}
+
+@media screen and (max-width: 1183px){
+    .main-grid {
+        @inlude main-grid();
+        .grid {
+            width: 400px;
+        }
+    }
+}
+
+@media screen and (max-width: 900px){
+    .main-grid{
+        @include main-grid();  
+        .grid {
+            width: 325px;
+        }
+    }
+}
+
+@media screen and (max-width: 1024px){
+    .main-grid{
+        @include main-grid();
+        .grid {
+            width: 321px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px){
+    .main-grid{
+        @include main-grid();
+        .grid{
+            width: 45%;
+        }
+    }
+}
+
+@media screen and (max-width: 560px){
+    .container{
+        padding: 0;
+    }
+    .header{
+        @include header-main-container();
+        &__text{
+            position: static;
+        }
+    }
+    .main-grid{
+        @include header-main-container();
+        justify-content: center;  
+        .grid{
+            width: auto;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
